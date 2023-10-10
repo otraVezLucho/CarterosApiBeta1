@@ -32,12 +32,11 @@ public class CarteroController {
     public List<DatosListaCarteros> listadoCarteros(){
         return carteroRepository.findAll().stream().map(DatosListaCarteros::new).toList();// usar los datos de listadoCarteros y cree un nuevo cartero con la informacion que trae del la db y que retorne un .toList
     }*/
-    /*
+
     @GetMapping // Se hace un get para obtener la informacion como paginas
     public Page<DatosListaCarteros> listadoCarteros(@PageableDefault (size = 3) Pageable paginacion){
         return carteroRepository.findAll(paginacion).map(DatosListaCarteros::new); // No se usa .stream() ni .toList() porque el objeto Pageable devuelve su propio formato
-    }*/
+    }
 
-    @GetMapping
-    public Page<DatosListaCarteros> getAll(Pageable paginacion){ return carteroRepository.getAll(paginacion);   }
+
 }
